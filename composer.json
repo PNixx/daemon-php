@@ -1,0 +1,23 @@
+{
+	"name": "pnixx/daemon",
+	"description": "Simple Daemon for PHP",
+	"keywords": ["daemon", "background", "php", "process"],
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Sergey Odintsov",
+			"email": "nixx.dj@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.6.0",
+		"ext-pcntl": "*",
+		"league/climate": "^3.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"PNixx\\Daemon\\": "src/"
+		}
+	}
+}
