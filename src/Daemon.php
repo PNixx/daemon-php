@@ -1,4 +1,6 @@
 <?php
+declare(ticks = 1);
+
 namespace PNixx\Daemon;
 
 use Closure;
@@ -265,7 +267,11 @@ abstract class Daemon {
 				unset($this->signal_queue[$pid]);
 			}
 		} else {
-			$function();
+			try {
+				$function();
+			} catch(\Exception $e) {
+				$this->exception($e);
+			}
 
 			//close process
 			exit(0);
